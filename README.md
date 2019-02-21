@@ -5,4 +5,5 @@ visual studio.net 2017 extension for abp vnext code generator archetype
 目前还是原型
 
  ![演示视频](https://upload-images.jianshu.io/upload_images/11347576-6104274f972c3cf0.gif?imageMogr2/auto-orient/strip)
+
 [《演示视频》]https://1drv.ms/v/s!AvQJerObIvHt1AM8CpxAuEwkAs2g
