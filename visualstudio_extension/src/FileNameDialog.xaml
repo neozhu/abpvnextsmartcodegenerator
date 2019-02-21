@@ -1,0 +1,106 @@
+﻿<Window x:Class="MadsKristensen.AddAnyFile.FileNameDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Title="Add Abp Application Service" Height="240"
+        Width="431" 
+        ResizeMode="NoResize" 
+        ShowInTaskbar="False" 
+        WindowStartupLocation="CenterScreen" SizeToContent="Width">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="lblEntity" Content="Model Name:" HorizontalAlignment="Left" Margin="5 0 0 0" VerticalAlignment="Center" Height="26" FontWeight="SemiBold" />
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="cbEntity" 
+                  VerticalContentAlignment="Center" 
+                  Height="23"   
+                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Stretch" 
+                  MinWidth="210"
+                  IsEditable="true" 
+                  ItemsSource="{Binding Path=Entities}"
+                  DisplayMemberPath="FullName"
+                  SelectedValuePath="Name"
+                  SelectedItem="{Binding Path=Entity,Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                  SelectedValue="{Binding Path=ModelName,Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                  />
+        <Label Grid.Row="1" Grid.Column="0" Name="lblFolder1" Content="Dto Class:" HorizontalAlignment="Left" Margin="5 0 0 0" VerticalAlignment="Center" Height="26" FontWeight="SemiBold" />
+        <TextBox Grid.Row="1" Grid.Column="1" Name="txtName1" 
+                 VerticalContentAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch" 
+                 MinWidth="210" 
+                 Text="{Binding Path=DtoClass,Mode=TwoWay}"
+                 />
+        <Label Grid.Row="2" Grid.Column="0" Name="lblFolder2" Content="CU Dto Class:" HorizontalAlignment="Left" Margin="5 0 0 0" VerticalAlignment="Center" Height="26" FontWeight="SemiBold" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="txtName2"
+                 VerticalContentAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch" 
+                 MinWidth="210" 
+                 Text="{Binding Path=CudtoClass,Mode=TwoWay}"
+                 />
+        <Label Grid.Row="3" Grid.Column="0" Name="lblFolder3" Content="IAppService Class:" HorizontalAlignment="Left" Margin="5 0 0 0" VerticalAlignment="Center" Height="26" FontWeight="SemiBold" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="txtName3" 
+                 VerticalContentAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch" 
+                 MinWidth="210"
+                 Text="{Binding Path=IServiceClass,Mode=TwoWay}"
+                 />
+        <Label Grid.Row="4" Grid.Column="0" Name="lblFolder4" Content="AppService Class:" HorizontalAlignment="Left" Margin="5 0 0 0" VerticalAlignment="Center" Height="26" FontWeight="SemiBold" />
+        <TextBox Grid.Row="4" Grid.Column="1" Name="txtName4" 
+                 VerticalContentAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch"
+                 MinWidth="210" 
+                 Text="{Binding Path=ServiceClass,Mode=TwoWay}"
+                 />
+        <Label Grid.Row="5" Grid.Column="0" Name="lblFolder5"
+               Content="{Binding Path=SelectFolder}" 
+               HorizontalAlignment="Left" 
+               Margin="5 0 0 0" 
+               VerticalAlignment="Center"
+               Height="26" 
+               FontWeight="SemiBold" />
+        <TextBox Grid.Row="5" Grid.Column="1" Name="txtName5" 
+                 VerticalContentAlignment="Center" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch" 
+                 MinWidth="210" 
+                 Text="{Binding Path=SubFolder,Mode=TwoWay}"
+                 />
+        <Button Grid.Row="5" Grid.Column="2" Content="Add files" 
+                HorizontalAlignment="Center" 
+                Margin="10,0" 
+                VerticalAlignment="Center" 
+                Width="75" 
+                Height="23" 
+                IsDefault="True" 
+                Name="btnCreate" 
+                Command="{Binding AddFilesCommand}"  />
+
+        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Name="lblTips" Content="Tips" HorizontalAlignment="Left" Margin="5,0" VerticalAlignment="Bottom" Height="26" />
+    </Grid>
+</Window>
